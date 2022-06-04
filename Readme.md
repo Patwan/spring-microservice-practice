@@ -2,12 +2,13 @@
 - A simple application on practice to build a microservice design pattern using Spring Boot , Spring Cloud
 dependencies
 
-## Dependencies
+## Dependencies (OS Level)
 - JDK 17
 - Docker desktop
 - Maven Build Tool
-- RabbitMq 
-- PostgreSQL
+
+## Docker Dependencies
+- All teh otehr dependencies will be pulled from docker hub as images
 
 # MicroServices Overview
 
@@ -15,7 +16,7 @@ a. **Load Balancer/ API GATEWAY**
 - An independent microservice sitting in a public network
 - This is the entry point of the application. A load balancer is used to control and balance network 
 traffic to the microservices,
-- In cloud providers eg AWS its better to use their loadbalancer than building your own one.
+- In cloud providers eg AWS it s better to use their load balancer than building your own one.
 - For this tutorial we will use our own API Gateway which also works as a load balancer.
 - API Gateway can manage and balance out network traffic just as a Load Balancer, just in a different way. 
 - Instead of distributing requests evenly to a set of backend resources (e.g. a cluster of servers), 
@@ -28,7 +29,7 @@ requests and performs the dynamic routing of microservice applications. It works
 requests. It is also known as Edge Server.
 
 
-b. **Clent Microservice**
+b. **Client Microservice**
 - An independent microservice sitting in a private network that a customer registers to
 - It sits as a n independent docker container
 - It communicates to other microservices via API calls, once a custoners registers, it checks the fraud microservice
@@ -70,9 +71,9 @@ NB ~ There are better ways nowadays, you can use Kubernetes and this replaces Eu
 Kubernetes is a portable, extensible, open source platform for managing containerized workloads and services, 
 that facilitates both declarative configuration and automation.
 
-h. **Sleuth/Ditributed Tracing**
+h. **Sleuth/Distributed Tracing**
 - Distributed tracing is a method of observing requests as they propagate through distributed cloud environments.
-- In this case we can have a 360 Degreees view of all the requests flowing in all the microservices 
+- In this case we can have a 360 Degrees view of all the requests flowing in all the microservices 
 this enables seeing bottleneck while in production.
 - In a monolithic system, it's relatively easy to track requests as they move 
 through the codebase because all requests can easily be logged to the same log file.
