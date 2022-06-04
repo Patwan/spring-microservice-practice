@@ -32,13 +32,13 @@ requests. It is also known as Edge Server.
 b. **Client Microservice**
 - An independent microservice sitting in a private network that a customer registers to
 - It sits as a n independent docker container
-- It communicates to other microservices via API calls, once a custoners registers, it checks the fraud microservice
-- if the client is fraudlent (synchronous communication means it has to wait for a response from fraud microservice)
+- It communicates to other microservices via API calls, once a custoners registers, it checks the payment microservice
+- if the client is fraudlent (synchronous communication means it has to wait for a response from payment microservice)
 - then later saves into postgresql database
 - 
 
-c. **Fraud Microservice**
-- its purpose is checking if a customer is fraudulent 
+c. **Payment Microservice**
+- used for payment purpose
 - It communicates with Customer microservice synchronously and Message Queue asynchronously
 
 d. **Message Queue (RABBITMQ)**

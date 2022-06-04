@@ -79,9 +79,9 @@ services:
       - zipkin
       - postgres
       - rabbitmq
-  fraud:
-    image: microservicestutorial/fraud:latest
-    container_name: fraud
+  payment:
+    image: microservicestutorial/payment:latest
+    container_name: payment
     ports:
       - "8081:8081"
     environment:
